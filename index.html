@@ -21,30 +21,30 @@ body {
 }
 
 .container {
-  padding: 55px 18px;
+  padding: 55px 20px;
 }
 
 .small {
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   color: #ffe4c2;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 h1 {
   color: #ffe1b5;
   font-size: 36px;
-  margin: 20px 0 5px;
+  margin-top: 25px;
 }
 
 .name {
-  font-size: 27px;
+  font-size: 29px;
   color: #fff0d8;
   margin: 15px;
 }
 
 .cake {
-  font-size: 105px;
-  margin: 30px 0;
+  font-size: 110px;
+  margin: 30px;
   animation: bounce 2s infinite;
 }
 
@@ -53,7 +53,7 @@ h1 {
 }
 
 p {
-  line-height: 1.8;
+  line-height: 1.9;
   font-size: 17px;
 }
 
@@ -63,4 +63,123 @@ button {
   border: none;
   border-radius: 30px;
   padding: 15px 28px;
-  font-size: 16px
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+#message {
+  display: none;
+  background: rgba(255,255,255,0.13);
+  border: 1px solid #f5d5b5;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 35px;
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+footer {
+  margin-top: 50px;
+  color: #ffe2d8;
+}
+
+.confetti {
+  position: fixed;
+  top: -30px;
+  font-size: 23px;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="small">A SPECIAL DAY FOR YOU</div>
+
+<h1>Happy Birthday</h1>
+
+<div class="name">Amna Siraj ❤️</div>
+
+<div class="cake">🎂</div>
+
+<p>
+Today is your special day!<br>
+Wishing you a beautiful day filled with happiness.
+</p>
+
+<button onclick="surprise()">
+Open Your Surprise 🎁
+</button>
+
+<div id="message">
+
+<h2>🌸 A Special Dua 🌸</h2>
+
+<p>
+May Allah bless you with happiness,
+good health and endless peace.
+
+May Allah accept all your duas,
+guide you in every step of life
+and grant you success.
+
+May your life always be filled
+with barakah and beautiful moments.
+
+Ameen 🤲
+</p>
+
+<h2>🎉 Many More Happy Returns!</h2>
+
+<p>
+Stay happy, keep smiling
+and always be blessed.
+
+With warm wishes and sisterly love ❤️
+</p>
+
+</div>
+
+<footer>
+Made with good wishes ✨
+</footer>
+
+</div>
+
+<script>
+function surprise() {
+  document.getElementById("message").style.display = "block";
+
+  for(let i = 0; i < 40; i++) {
+    let item = document.createElement("div");
+    item.className = "confetti";
+    item.innerHTML = ["🎉","✨","🌸","💖","🎊"][
+      Math.floor(Math.random()*5)
+    ];
+
+    item.style.left = Math.random()*100 + "vw";
+    item.style.animationDelay = Math.random()*2 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
