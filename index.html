@@ -54,7 +54,9 @@ h1 {
 }
 
 @keyframes bounce {
-  50% { transform: translateY(-12px); }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 p {
@@ -73,6 +75,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background: #fff1c5;
+}
+
 #message {
   display: none;
   background: rgba(255,255,255,0.10);
@@ -84,8 +90,12 @@ button {
 }
 
 @keyframes fade {
-  from {opacity:0;}
-  to {opacity:1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 footer {
@@ -139,16 +149,26 @@ Open Your Surprise 🎁
 
 <p>
 May Allah bless you with happiness,
-good health and endless peace.
+good health and success.
 
-May Allah accept all your duas,
-guide you in every step of life
-and grant you success.
-
-May your life always be filled
-with barakah and beautiful moments.
+May Allah accept your duas,
+guide you always and fill your life
+with barakah and peace.
 
 Ameen 🤲
+</p>
+
+<h2>📚 Best Wishes for Your O/L Exams!</h2>
+
+<p>
+May Allah bless you with knowledge,
+wisdom and confidence.
+
+May all your hard work bring success
+and may you achieve excellent results
+in your O/L examinations.
+
+Wishing you all the very best!
 </p>
 
 <h2>✨ Many More Happy Returns!</h2>
@@ -156,9 +176,6 @@ Ameen 🤲
 <p>
 Stay happy, keep smiling
 and always remain blessed.
-
-Wishing you a bright future
-filled with success and blessings.
 </p>
 
 </div>
@@ -171,16 +188,21 @@ Made with sincere duas ✨
 
 <script>
 function surprise() {
+
   document.getElementById("message").style.display = "block";
 
   for(let i = 0; i < 40; i++) {
+
     let item = document.createElement("div");
+
     item.className = "confetti";
+
     item.innerHTML = ["🌙","✨","⭐","🌸","☪"][
       Math.floor(Math.random()*5)
     ];
 
     item.style.left = Math.random()*100 + "vw";
+
     item.style.animationDelay = Math.random()*2 + "s";
 
     document.body.appendChild(item);
